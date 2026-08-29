@@ -18,5 +18,16 @@ def health():
     })
 
 
+@app.route("/api/student")
+def student():
+    return jsonify({
+        "name": "Demo Student",
+        "attendance": 85,
+        "internal_marks": 72,
+        "study_hours": 3,
+        "risk_level": "Low"
+    })
+
+
 if __name__ == "__main__":
     app.run(debug=True)
