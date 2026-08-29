@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -26,6 +26,16 @@ def student():
         "internal_marks": 72,
         "study_hours": 3,
         "risk_level": "Low"
+    })
+
+
+@app.route("/api/student", methods=["POST"])
+def add_student():
+    data = request.get_json()
+
+    return jsonify({
+        "message": "Student data received successfully",
+        "student": data
     })
 
 
