@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
+from database import create_table, add_student
 
 app = Flask(__name__)
+
+create_table()
 
 
 @app.route("/")
@@ -30,11 +33,25 @@ def student():
 
 
 @app.route("/api/student", methods=["POST"])
-def add_student():
+def add_student_api():
     data = request.get_json()
 
+    name = data["name"]
+    attendance = data["attendance"]
+    internal_marks = data["internal_marks"]
+    study_hours = data["study_hours"]
+    assignment_completion = data["assignment_completion"]
+
+    add_student(
+        name,
+        attendance,
+        internal_marks,
+        study_hours,
+        assignment_completion
+    )
+
     return jsonify({
-        "message": "Student data received successfully",
+        "message": "Student added successfully",
         "student": data
     })
 
