@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Success AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Success AI</h1>
+        <p>Student Performance & Early Warning System</p>
+    </header>
+
+    <main>
+
+        <!-- Add Student -->
+
+        <section class="student-form">
+
+            <h2>Add Student</h2>
+
+            <form id="student-form">
+
+                <input
+                    type="text"
+                    id="student-name"
+                    placeholder="Student Name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="student-attendance"
+                    placeholder="Attendance (%)"
+                    min="0"
+                    max="100"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="student-marks"
+                    placeholder="Internal Marks"
+                    min="0"
+                    max="100"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="student-hours"
+                    placeholder="Study Hours per Day"
+                    min="0"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="student-assignment"
+                    placeholder="Assignment Completion (%)"
+                    min="0"
+                    max="100"
+                    required
+                >
+
+                <button type="submit">
+                    Add Student
+                </button>
+
+            </form>
+
+            <p id="form-message"></p>
+
+        </section>
+
+
+        <!-- Student Selection -->
+
+        <section class="student-select">
+
+            <label for="student-select">
+                Select Student
+            </label>
+
+            <select id="student-select">
+                <option value="">
+                    Select a student
+                </option>
+            </select>
+
+        </section>
+
+
+        <!-- Student Dashboard -->
+
+        <section class="student-card">
+
+            <h2>Student Dashboard</h2>
+
+            <div class="student-info">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="name">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Attendance:</strong>
+                    <span id="attendance">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Internal Marks:</strong>
+                    <span id="marks">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Study Hours:</strong>
+                    <span id="study-hours">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Assignment Completion:</strong>
+                    <span id="assignment">Loading...</span>
+                </p>
+
+            </div>
+
+
+            <!-- Risk -->
+
+            <div class="risk">
+
+                <h3>Risk Level</h3>
+
+                <p id="risk">Loading...</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Performance Chart -->
+
+        <section class="performance-chart">
+
+            <h2>Student Performance</h2>
+
+            <div class="chart">
+
+                <div class="bar-container">
+
+                    <span>Attendance</span>
+
+                    <div class="bar">
+                        <div
+                            id="attendance-bar"
+                            class="bar-fill">
+                        </div>
+                    </div>
+
+                    <span id="attendance-value">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="bar-container">
+
+                    <span>Internal Marks</span>
+
+                    <div class="bar">
+                        <div
+                            id="marks-bar"
+                            class="bar-fill">
+                        </div>
+                    </div>
+
+                    <span id="marks-value">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="bar-container">
+
+                    <span>Assignment</span>
+
+                    <div class="bar">
+                        <div
+                            id="assignment-bar"
+                            class="bar-fill">
+                        </div>
+                    </div>
+
+                    <span id="assignment-value">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="bar-container">
+
+                    <span>Study Hours</span>
+
+                    <div class="bar">
+                        <div
+                            id="study-bar"
+                            class="bar-fill">
+                        </div>
+                    </div>
+
+                    <span id="study-value">
+                        0 hours
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI Recommendations -->
+
+        <section class="recommendations">
+
+            <h2>AI Recommendations 🤖</h2>
+
+            <ul id="recommendation-list">
+
+                <li>
+                    Loading recommendations...
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
